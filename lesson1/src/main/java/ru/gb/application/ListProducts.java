@@ -16,8 +16,6 @@ import java.util.List;
 @WebServlet(name = "products", urlPatterns = "/products")
 public class ListProducts extends HttpServlet {
 
-    //List<Product> productsList = new ArrayList<>();
-
 
     private static Logger logger = LoggerFactory.getLogger(ListProducts.class);
 
