@@ -40,34 +40,12 @@ public class ListProducts extends HttpServlet {
         products.add(new Product(10, "Sour Cream", 5.99));
 
         for (Product dre : products)
-         //   System.out.println(dre.toString());
             res.getWriter().printf(dre.toString());
 
         res.getWriter().printf("</body></html>");
         res.getWriter().close();
 
     }
-
-//    public void getProducts() {
-//
-//        List<Product> products = new ArrayList<Product>();
-//
-//        products.add(new Product(1, "Milk", 2.99));
-//        products.add(new Product(2, "Cheese", 3.99));
-//        products.add(new Product(3, "Kefir", 1.99));
-//        products.add(new Product(4, "Yogurt", 0.99));
-//        products.add(new Product(5, "Ryazhnka", 2.99));
-//        products.add(new Product(7, "Butter", 4.99));
-//        products.add(new Product(8, "Curd", 3.99));
-//        products.add(new Product(9, "Cream", 2.99));
-//        products.add(new Product(10, "Sour Cream", 5.99));
-//
-//
-//        for (Product dre : products)
-//            System.out.println(dre);
-//
-//       //return pro;
-//    }
 
 
 }
