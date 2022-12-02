@@ -10,18 +10,64 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "products", urlPatterns = "/products")
 public class ListProducts extends HttpServlet {
+
+    //List<Product> productsList = new ArrayList<>();
+
 
     private static Logger logger = LoggerFactory.getLogger(ListProducts.class);
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        logger.info("Log: Third");
+        logger.info("Log: Products");
         res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-        out.printf("<html><body><h1>Third request</h1></body></html>");
-        out.close();
+        res.getWriter().printf("<html><body>");
+
+        List<Product> products = new ArrayList<Product>();
+
+        products.add(new Product(1, "Milk", 2.99));
+        products.add(new Product(2, "Cheese", 3.99));
+        products.add(new Product(3, "Kefir", 1.99));
+        products.add(new Product(4, "Yogurt", 0.99));
+        products.add(new Product(5, "Ryazhnka", 2.99));
+        products.add(new Product(7, "Butter", 4.99));
+        products.add(new Product(8, "Curd", 3.99));
+        products.add(new Product(9, "Cream", 2.99));
+        products.add(new Product(10, "Sour Cream", 5.99));
+
+        for (Product dre : products)
+         //   System.out.println(dre.toString());
+            res.getWriter().printf(dre.toString());
+
+        res.getWriter().printf("</body></html>");
+        res.getWriter().close();
+
     }
+
+//    public void getProducts() {
+//
+//        List<Product> products = new ArrayList<Product>();
+//
+//        products.add(new Product(1, "Milk", 2.99));
+//        products.add(new Product(2, "Cheese", 3.99));
+//        products.add(new Product(3, "Kefir", 1.99));
+//        products.add(new Product(4, "Yogurt", 0.99));
+//        products.add(new Product(5, "Ryazhnka", 2.99));
+//        products.add(new Product(7, "Butter", 4.99));
+//        products.add(new Product(8, "Curd", 3.99));
+//        products.add(new Product(9, "Cream", 2.99));
+//        products.add(new Product(10, "Sour Cream", 5.99));
+//
+//
+//        for (Product dre : products)
+//            System.out.println(dre);
+//
+//       //return pro;
+//    }
+
+
 }
